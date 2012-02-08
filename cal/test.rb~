@@ -1,0 +1,9 @@
+require 'rubygems'
+require 'hpricot'
+require 'open-uri'
+
+doc = Hpricot(open("http://www.ieice.org/event/allevents.php").read )
+
+(doc/:li).each do |link|
+	puts "#{link}"
+end
